@@ -4,8 +4,8 @@
 
 class Player:
     '''Dosctring TODO
-    THIS IS NOT A VERY GENERALIZABLE MODEL IF YOU KNOW THINGS ABOUT FOOTBALL
-    and that's okay
+    A Player's stats with the number of yards, touchdowns, saftey
+    interceptions and field goals.
     '''
     def __init__(self, name=None, yards=120, touchdowns=5, safety=1,
                  interceptions=0, field_goals=3):
@@ -23,6 +23,17 @@ class Player:
         safety_points = 2 * self.stats['safety']
         total_points = td_points + safety_points
         return total_points
+        
+class Defensive(Player):
+    """
+
+    """
+    def __init(self, tackles, sacks, interceptions):
+        super().__init__(name=name, yards=yards, touchdowns=touchdowns,
+                         safety=safety, interceptions=interceptions)
+        self.tackles = tackles
+        self.sacks = sacks
+        self.interceptions = interceptions
 
 
 class Quarterback(Player):
