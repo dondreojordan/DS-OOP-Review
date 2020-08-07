@@ -3,7 +3,8 @@
 
 
 class Player:
-    '''Dosctring TODO
+    '''
+    [X] Dosctring TODO
     A Player's stats with the number of yards, touchdowns, saftey
     interceptions and field goals.
     '''
@@ -19,21 +20,22 @@ class Player:
     def get_points(self):
         '''Gets points scored by the player from stats
         '''
-        td_points = 6 * self.stats['td']
-        safety_points = 2 * self.stats['safety']
+        td_points = 6 * self.touchdowns
+        safety_points = 2 * self.safety
         total_points = td_points + safety_points
         return total_points
         
 class Defensive(Player):
     """
-
+    [X] Override certain parameters of the default Player class and add some
+    functionality unique to defensive player
     """
-    def __init(self, tackles, sacks, interceptions):
+    def __init(self, name=None, yards=85, touchdowns=3,
+               safety=1, interceptions=3, tackles=5, sacks=2):
         super().__init__(name=name, yards=yards, touchdowns=touchdowns,
                          safety=safety, interceptions=interceptions)
         self.tackles = tackles
         self.sacks = sacks
-        self.interceptions = interceptions
 
 
 class Quarterback(Player):

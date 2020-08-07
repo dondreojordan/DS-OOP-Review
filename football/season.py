@@ -1,6 +1,6 @@
-'''Tracks the season perfomance of different teams and generates a
+'''Tracks the season performance of different teams and generates a report.
 '''
-from possible_values import team_names, teams, location, week
+from possible_values import team_names, location, week
 from game import Game
 from random import randint, uniform, sample
 
@@ -13,23 +13,24 @@ def generate_rand_games(n=15):
 
     # For the specified number of games, create an instance of the Game
     # class...
-    # TODO - You can also include the location and week number if desired
-    for _ in list(range(n)):
+    # [?] TODO - You can also include the location and week number if desired
+    for i in list(range(n)):
         # Get team names by sampling team_names from possible_values
-        game = Game(teams=sample(team_names, k=2))
-
+        game = Game(teams=sample(team_names, k=2), 
+                    location=sample(location, k=1),
+                    week=i)
         # Give each team a random number (from 0 to 3) of each:
         # touchdowns and field goals
-        for i in list(range(randint(0, 4))):
+        for _ in list(range(randint(0, 4))):
             game.field_goal(game.teams[0])
 
-        for j in list(range(randint(0, 4))):
+        for _ in list(range(randint(0, 4))):
             game.field_goal(game.teams[1])
 
-        for k in list(range(randint(0, 4))):
+        for _ in list(range(randint(0, 4))):
             game.touchdown(game.teams[0])
 
-        for l in list(range(randint(0, 4))):
+        for _ in list(range(randint(0, 4))):
             game.touchdown(game.teams[1])
 
         games.append(game)
@@ -76,7 +77,7 @@ def season_report(games):
     # Instantiate dict to keep track of individual team records
     team_records = {}
 
-    # Could use a defaultdict from collections, but I chose to
+    # Could use a default dict from collections, but I chose to
     # manually set the default value for each team in the teams set
     for team in list(teams):
         team_records[team] = [0, 0]

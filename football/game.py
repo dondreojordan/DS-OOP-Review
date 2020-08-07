@@ -1,7 +1,9 @@
 '''Game class to model a football game
 '''
-from teams import team_names
-import random
+from possible_values import team_names
+# Needed to add the root directory 'football' 
+# Then the sub-directory 'team' folder created listing all teams
+# import random
 
 
 class Game:
@@ -10,7 +12,7 @@ class Game:
     Parameters
     -----------------------------
     teams : list
-        list of length 2, strings of team names
+        list of length 2 (teams), strings of team names
     location : str
         city
     score : dict
@@ -26,6 +28,7 @@ class Game:
     losing_team_ : str
         team name
     '''
+    
 
     def __init__(self, teams=None, location=None, score=None, week=None):
         self.teams = teams
