@@ -9,7 +9,7 @@ class Player:
     interceptions and field goals.
     '''
     def __init__(self, name=None, yards=120, touchdowns=5, safety=1,
-                 interceptions=0, field_goals=3):
+                 interceptions=1, field_goals=3):
         self.name = name
         self.yards = yards
         self.touchdowns = touchdowns

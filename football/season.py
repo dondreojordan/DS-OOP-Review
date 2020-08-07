@@ -58,7 +58,7 @@ def season_report(games):
         teams.add(game.teams[0])
         teams.add(game.teams[1])
 
-        # Record the winning and losing teams for each game
+        # Records the winning and losing teams for each game
         winning_team, losing_team = game.get_winning_team()
         winning_teams.append(winning_team)
         losing_teams.append(losing_team)

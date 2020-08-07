@@ -1,10 +1,10 @@
 import unittest
 from players import Player, Defensive, Quarterback
-impo
-# from possible_values import team_names, location, week
-# from game import Game
-# from season import generate_rand_games
-# from team import team_names
+from possible_values import team_names, location, week
+from game import Game
+from season import generate_rand_games
+from random import sample
+
 
 # TODO - some things you can add...
 
@@ -21,13 +21,12 @@ class FootballGameTest(unittest.TestCase):
         field_goal = Player(field_goals=2)
         self.assertEqual(field_goal.field_goals, 2)
 
-    # def test_get_winner(self):
-    #    game = Game(details)
-    #    -score points-
-    #    winning_team = game.get_winning_team
-       
-    #    #Give points to team 
-    #     self.assertEqual(winning_team, team_name)
+    def test_get_winner(self):
+       game = Game(teams=sample(team_names, k=2), score=2)
+    #    score_points = game(score=2)
+       winning_team = game.get_winning_team      
+       #Give points to team 
+       self.assertEqual(winning_team, 'LA Chargers')
 
 
 class FootballPlayerTest(unittest.TestCase):

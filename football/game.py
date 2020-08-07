@@ -3,7 +3,7 @@
 from possible_values import team_names
 # Needed to add the root directory 'football' 
 # Then the sub-directory 'team' folder created listing all teams
-# import random
+import random
 
 
 class Game:
